@@ -43,4 +43,5 @@ jobs:
           # Add more secrets in Settings > Secrets > Actions
           MY_EMAIL: ${{ secrets.MY_EMAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
         run: python main.py
