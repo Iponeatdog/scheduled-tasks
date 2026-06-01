@@ -11,6 +11,10 @@ password = os.environ.get("PASSWORD")
 
 OWM_Endpoint = "https://api.openweathermap.org/data/2.5/forecast"
 
+print("API_KEY exists:", API_KEY is not None)
+print("EMAIL exists:", my_email is not None)
+print("PASSWORD exists:", password is not None)
+
 weather_params = {
     "lat": LAT,
     "lon": LON,
@@ -18,15 +22,9 @@ weather_params = {
     "cnt": 4,
 }
 
-print(f"API_KEY exists: {API_KEY is not None}")
-print(f"API_KEY length: {len(API_KEY) if API_KEY else 0}")
-
 response = requests.get(OWM_Endpoint, params=weather_params)
-print(response.status_code)
-print(response.text)
 response.raise_for_status()
 weather_data = response.json()
-print(weather_data)
 
 # for i in range(len(weather_data["list"])):
 #     for j in range(len(weather_data["list"][i]["weather"])):
@@ -47,5 +45,4 @@ if will_rain:
             to_addrs=my_email,
             msg= "Subject:It is going to rain tomorrow\n\nRemember to bring your umbrella!!"
         )
-        print("mail sent!")
 
