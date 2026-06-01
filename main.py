@@ -3,8 +3,8 @@ import smtplib
 import os
 
 API_KEY = os.environ.get("OWM_API_KEY")
-LAT = os.environ.get("ACCOUNT_SID")
-LON = -3.435973
+LAT = 13.756331
+LON = 100.501762
 
 my_email = os.environ.get("EMAIL")
 password = os.environ.get("PASSWORD")
