@@ -18,7 +18,12 @@ weather_params = {
     "cnt": 4,
 }
 
+print(f"API_KEY exists: {API_KEY is not None}")
+print(f"API_KEY length: {len(API_KEY) if API_KEY else 0}")
+
 response = requests.get(OWM_Endpoint, params=weather_params)
+print(response.status_code)
+print(response.text)
 response.raise_for_status()
 weather_data = response.json()
 print(weather_data)
