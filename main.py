@@ -39,7 +39,7 @@ if will_rain:
         connection.sendmail(
             from_addr=my_email,
             to_addrs=my_email,
-            msg= "Subject:It is going to rain tomorrow\n\nRemember to bring your umbrella!!"
-            print("mail sent!")
+            msg= "Subject:It is going to rain tomorrow\n\nRemember to bring your umbrella!!",
         )
+        print("mail sent!")
 
